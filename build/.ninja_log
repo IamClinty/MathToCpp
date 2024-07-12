@@ -1,0 +1,10 @@
+# ninja log v5
+16	360	7425011528034019	CMakeFiles/MathToCpp.dir/main.cpp.obj	ff2b0691fffecc4d
+64	191	7425008948982804	MachineLearningFunctions/libMachineLearningFunctions.dll.a	1b1b65622fd61894
+13	682	7425007288009374	libMathFunctions.dll	829537862f426a07
+13	63	7425008947731811	MachineLearningFunctions/CMakeFiles/MachineLearningFunctions.dir/src/LossFunctions.cpp.obj	eb6b1dbaf065baa4
+11	156	7425013015975706	build.ninja	3384cb42a6387585
+17	205	7425005469671647	MathFunctions/CMakeFiles/MathFunctions.dir/OptionFunctions.cpp.obj	7b7f0a23ce249bdd
+13	682	7425007288009374	MathFunctions/libMathFunctions.dll.a	829537862f426a07
+360	498	7425011529335841	MathToCpp.exe	5efd14863d0f49d4
+64	191	7425008948982804	libMachineLearningFunctions.dll	1b1b65622fd61894

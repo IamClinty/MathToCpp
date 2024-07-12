@@ -1,0 +1,32 @@
+# CMake build directories
+/build/
+*build/
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Compiled object files
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+
+# Binary files
+*.bin
+*.out
+
+# IDE files
+*.user
+*.sublime-workspace
+*.sublime-project
+*.swp
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# VSCode settings
+.vscode/
