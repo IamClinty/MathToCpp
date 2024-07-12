@@ -1,6 +1,6 @@
 # 创建链接库 add_library(库名 源文件 头文件(可选放))
 set(SOURCES
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"  # 只需添加 .cpp 文件
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/LossFunctions.cpp"  # 只需添加 .cpp 文件
 )
 add_library(MachineLearningFunctions SHARED "${SOURCES}")
 

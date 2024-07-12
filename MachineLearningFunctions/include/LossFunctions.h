@@ -1,6 +1,8 @@
 #ifndef __MATHTOCPP_MACHINELEARNINGFUNCTIONS_LOSSFUNCTIONS_H__
 #define __MATHTOCPP_MACHINELEARNINGFUNCTIONS_LOSSFUNCTIONS_H__
 
+#include <cmath>
+
 template <typename T>
 class LossFunctions {
 public:
