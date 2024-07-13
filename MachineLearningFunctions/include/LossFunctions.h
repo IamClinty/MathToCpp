@@ -6,10 +6,10 @@
 template <typename T>
 class LossFunctions {
 public:
-    static int    zero_one_LossFunction(T actual, T predicted);
-    static double quadratic_LossFunction(T actual, T predicted);
-    static double abssolute_LossFunction(T actual, T predicted);
-    static double logarithmic_LossFunction(T actual, T predicted);
+    static int    zeroOne(T actual, T predicted);
+    static double quadratic(T actual, T predicted);
+    static double abssolute(T actual, T predicted);
+    static double logarithmic(T actual, T predicted);
 };
 
 #include "../src/implementations/LossFunctions.tpp"
