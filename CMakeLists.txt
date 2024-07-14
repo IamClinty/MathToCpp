@@ -16,6 +16,7 @@ set(CMAKE_INSTALL_PREFIX "../install")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 
 # 添加子文件夹 add_subdirectory(文件夹名)
+add_subdirectory(Test)
 add_subdirectory(LinearAlgebra)
 add_subdirectory(MathFunctions)
 add_subdirectory(MachineLearningFunctions)
@@ -24,7 +25,8 @@ add_subdirectory(MachineLearningFunctions)
 add_executable(MathToCpp main.cpp)
 
 # 向可执行文件中添加链接库 target_link_libraries(目标名称 PUBLIC 库名)
-target_link_libraries(MathToCpp PUBLIC MathFunctions MachineLearningFunctions LinearAlgebra)
+target_link_libraries(MathToCpp PUBLIC MathFunctions)
+target_link_libraries(MathToCpp PUBLIC MachineLearningFunctions)
 
 # 添加搜索目录
 target_include_directories(MathToCpp PUBLIC
