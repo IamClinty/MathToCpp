@@ -27,7 +27,6 @@ add_executable(MathToCpp main.cpp)
 # 向可执行文件中添加链接库 target_link_libraries(目标名称 PUBLIC 库名)
 target_link_libraries(MathToCpp PUBLIC MathFunctions)
 target_link_libraries(MathToCpp PUBLIC MachineLearningFunctions)
-target_link_libraries(MathToCpp PUBLIC LinearAlgebra)
 
 # 添加搜索目录
 target_include_directories(MathToCpp PUBLIC
