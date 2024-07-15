@@ -1,11 +1,11 @@
 #include "../../include/SquareMatrix.h"
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 SquareMatrix<T, n>::SquareMatrix():rows(n), cols(n){
     creatSquareMatrix();
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 SquareMatrix<T, n>::~SquareMatrix(){
     for(int i = 0; i < rows; ++i) {
         delete[] point[i];
@@ -13,7 +13,7 @@ SquareMatrix<T, n>::~SquareMatrix(){
     delete[] point; 
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 SquareMatrix<T, n>::SquareMatrix(T** arr):rows(n), cols(n){
     creatSquareMatrix();
     for(int i = 0; i < rows; ++ i){
@@ -23,17 +23,17 @@ SquareMatrix<T, n>::SquareMatrix(T** arr):rows(n), cols(n){
     }
 }
 
-// template <typename T, int cols>
-// SquareMatrix<T, cols>::SquareMatrix(T (&arr)[cols][cols]):rows(cols), cols(cols){
-//     creatSquareMatrix(rows);
-//     for(int i = 0; i < rows; ++ i){
-//         for(int j = 0; j < cols; ++ j){
-//             point[i][j] = arr[i][j];
-//         }
-//     }
-// }
+template <typename T, unsigned short n>
+SquareMatrix<T, n>::SquareMatrix(T (&arr)[][n]):rows(n), cols(n){
+    creatSquareMatrix(rows);
+    for(int i = 0; i < rows; ++ i){
+        for(int j = 0; j < cols; ++ j){
+            point[i][j] = arr[i][j];
+        }
+    }
+}
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 SquareMatrix<T, n>::SquareMatrix(const std::vector<std::vector<T>>& vec):rows(n), cols(n){
     int rows = vec.size();
     int cols = vec[0].size();
@@ -41,7 +41,7 @@ SquareMatrix<T, n>::SquareMatrix(const std::vector<std::vector<T>>& vec):rows(n)
     creatSquareMatrix();
 
     if(rows != cols || rows == 0){
-        std::cout << "The matrix is not a square matrix." << "|" << " rows: " << rows << " cols: " << cols << std::endl;
+        std::cout << "The matrix is not a square matrix." << " |" << " rows: " << rows << " cols: " << cols << std::endl;
         return;
     }
     if(rows != this->rows){
@@ -57,7 +57,7 @@ SquareMatrix<T, n>::SquareMatrix(const std::vector<std::vector<T>>& vec):rows(n)
     }
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 std::ostream& operator<<(std::ostream& os, const SquareMatrix<T, n>& squareMatrix){
     int rows = squareMatrix.rows;
     int cols = squareMatrix.cols;
@@ -72,7 +72,7 @@ std::ostream& operator<<(std::ostream& os, const SquareMatrix<T, n>& squareMatri
     return os;
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 void SquareMatrix<T, n>::creatSquareMatrix(){
     if(n > 0){
         point = new T*[n];
@@ -82,12 +82,12 @@ void SquareMatrix<T, n>::creatSquareMatrix(){
     }
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 int SquareMatrix<T, n>::getRows(){
     return this->rows;
 }
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 int SquareMatrix<T, n>::getCols(){
     return this->cols;
 }

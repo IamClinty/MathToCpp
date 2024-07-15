@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 
-template <typename T, int n>
+template <typename T, unsigned short n>
 class SquareMatrix
 {
 public:
@@ -19,7 +19,7 @@ public:
     * @author GongZheng
     */
     SquareMatrix(T** arr);
-    SquareMatrix(T (&arr)[n][n]);
+    SquareMatrix(T (&arr)[][n]);
     SquareMatrix(const std::vector<std::vector<T>>& vec);
     /**
     * @brief SquareMatrix析构函数，释放point以及point[]指向的内存
@@ -37,7 +37,7 @@ private:
 
     void creatSquareMatrix();
 
-    template <typename U, int n1>
+    template <typename U, unsigned short n1>
     friend std::ostream& operator<<(std::ostream& os, const SquareMatrix<U, n1>& squareMatrix);
 };
 
