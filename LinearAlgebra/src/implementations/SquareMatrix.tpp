@@ -59,8 +59,8 @@ SquareMatrix<T, n>::SquareMatrix(const std::vector<std::vector<T>>& vec):rows(n)
 
 template <typename T, unsigned short n>
 std::ostream& operator<<(std::ostream& os, const SquareMatrix<T, n>& squareMatrix){
-    int rows = squareMatrix.rows;
-    int cols = squareMatrix.cols;
+    unsigned short rows = squareMatrix.rows;
+    unsigned short cols = squareMatrix.cols;
     for(int i = 0; i < rows; ++ i){
         os << "| ";
         for(int j = 0; j < cols; ++ j){
@@ -70,6 +70,36 @@ std::ostream& operator<<(std::ostream& os, const SquareMatrix<T, n>& squareMatri
     }
     os << "size: " << rows << "*" << cols << "\n";
     return os;
+}
+
+template <typename T, unsigned short n>
+SquareMatrix<T, n> SquareMatrix<T, n>::operator+(const SquareMatrix<T, n>& other) const {
+    unsigned short rows = this->rows;
+    unsigned short cols = this->cols;
+    SquareMatrix<T, n> square = SquareMatrix<T, n>();
+    for(int i = 0; i < rows; ++ i){
+        for(int j = 0; j < cols; ++ j){
+            square.point[i][j] = this->point[i][j] + other.point[i][j];
+        }
+    }
+    return square;
+}
+
+template <typename T, unsigned short n>
+SquareMatrix<T, n> operator*(const SquareMatrix<T, n>& lSquare, const SquareMatrix<T, n>& rSquare){
+    unsigned short rows = lSquare.rows;
+    unsigned short cols = lSquare.cols;
+    SquareMatrix<T, n> square = SquareMatrix<T, n>();
+    for(int i = 0; i < rows; ++ i){
+        for(int j = 0; j < cols; ++ j){
+            T sum = 0;
+            for(int m = 0; m < cols; ++ m){
+                sum += lSquare.point[i][m] * rSquare.point[m][j];
+            }
+            square.point[i][j] = sum;
+        }
+    }
+    return square;
 }
 
 template <typename T, unsigned short n>

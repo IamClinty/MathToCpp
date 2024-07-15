@@ -27,18 +27,36 @@ public:
     */
     ~SquareMatrix();
 
+    /**
+    * @brief SquareMatrix operator<<实现
+    * @author GongZheng
+    */
+    template <typename U, unsigned short m>
+    friend std::ostream& operator<<(std::ostream& os, const SquareMatrix<U, m>& squareMatrix);
+
+    /**
+    * @brief SquareMatrix operator+实现
+    *        注意：+左右方阵的阶数需相同
+    * @author GongZheng
+    */
+    SquareMatrix<T, n> operator+(const SquareMatrix<T, n>& other) const;
+
+    /**
+    * @brief SquareMatrix operator*实现
+    * @author GongZheng
+    */
+    template <typename U, unsigned short m>
+    friend SquareMatrix<U, m> operator*(const SquareMatrix<U, m>& lSquare, const SquareMatrix<U, m>& rSquare);
+
     int getRows();
     int getCols();
 
 private:
-    int rows;
-    int cols;
+    unsigned short rows;
+    unsigned short cols;
     T**  point;
 
     void creatSquareMatrix();
-
-    template <typename U, unsigned short n1>
-    friend std::ostream& operator<<(std::ostream& os, const SquareMatrix<U, n1>& squareMatrix);
 };
 
 #include "../src/implementations/SquareMatrix.tpp"
