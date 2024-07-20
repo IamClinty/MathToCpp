@@ -103,6 +103,17 @@ SquareMatrix<T, n> operator*(const SquareMatrix<T, n>& lSquare, const SquareMatr
 }
 
 template <typename T, unsigned short n>
+SquareMatrix<T, n> SquareMatrix<T, n>::transpose() const{
+    SquareMatrix<T, n> square = SquareMatrix<T, n>();
+    for(unsigned short i = 0; i < this->rows; ++ i){
+        for(unsigned short j = 0; j < this->cols; ++ j){
+            square.point[j][i] = this->point[i][j];
+        }
+    }
+    return square;
+}
+
+template <typename T, unsigned short n>
 void SquareMatrix<T, n>::creatSquareMatrix(){
     if(n > 0){
         point = new T*[n];

@@ -48,6 +48,8 @@ public:
     template <typename U, unsigned short m>
     friend SquareMatrix<U, m> operator*(const SquareMatrix<U, m>& lSquare, const SquareMatrix<U, m>& rSquare);
 
+    SquareMatrix<T, n> transpose() const;
+
     int getRows();
     int getCols();
 

@@ -19,6 +19,9 @@ public:
 
         SquareMatrix<int, 3> square4 = square3 * square2;
         std::cout << square4;
+
+        SquareMatrix<int, 3> square5 = square2.transpose();
+        std::cout << square5;
     }
 };
 
